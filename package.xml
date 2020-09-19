@@ -6,7 +6,7 @@
   </description>
   <maintainer email="julius.sustarevas.16@ucl.ac.uk">Julius Sustarevas</maintainer>
   <author email="julius.sustarevas.16@ucl.ac.uk">Julius Sustarevas</author>
-  <license>BSD</license>
+  <license>MIT</license>
   <url type="website"></url>
   <url type="repository"></url>
 
@@ -15,6 +15,5 @@
   <build_depend>std_msgs</build_depend>
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
-
 
 </package>
