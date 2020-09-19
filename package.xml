@@ -1,0 +1,20 @@
+<package>
+  <name>ros_msgdict</name>
+  <version>0.3.0</version>
+  <description>
+         This is a small helper that allows storing ros messages as ros parameters.
+  </description>
+  <maintainer email="julius.sustarevas.16@ucl.ac.uk">Julius Sustarevas</maintainer>
+  <author email="julius.sustarevas.16@ucl.ac.uk">Julius Sustarevas</author>
+  <license>BSD</license>
+  <url type="website"></url>
+  <url type="repository"></url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+
+</package>

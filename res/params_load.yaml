@@ -1,0 +1,60 @@
+default_mesh:
+  type: "std_msgs/String"
+  dict:
+    data: "package://interactive_waypoints/res/generic_flag.stl"
+control_scale:
+  type: "std_msgs/Float32"
+  dict:
+    data: 0.35
+marker_color:
+  type: "std_msgs/ColorRGBA"
+  dict:
+    r: .8
+    g: .8
+    b: .8
+    a: .6
+marker_color_hl:
+  type: "std_msgs/ColorRGBA"
+  dict:
+    r: 1
+    g: .2
+    b: .2
+    a: .8
+red_arrow_color:
+  type: "std_msgs/ColorRGBA"
+  dict:
+    r: 1
+    g: 0
+    b: 0
+    a: .8
+text_color:
+  type: "std_msgs/ColorRGBA"
+  dict:
+    r: 1
+    g: 1
+    b: 0
+    a: 1
+marker_mesh_scale:
+  type: "geometry_msgs/Vector3"
+  dict:
+    x: .001
+    y: .001
+    z: .001
+marker_sphere_scale:
+  type: "geometry_msgs/Vector3"
+  dict:
+    x: .25
+    y: .25
+    z: .25
+arrow_scale:
+  type: "geometry_msgs/Vector3"
+  dict:
+    x: .3
+    y: .02
+    z: .02
+text_scale:
+  type: "geometry_msgs/Vector3"
+  dict:
+    x: .25
+    y: .25
+    z: .25
