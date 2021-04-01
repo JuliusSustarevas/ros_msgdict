@@ -137,9 +137,23 @@ def _msgdict2_dict(msg_dict):
     if _check_msgdict_format(msg_dict):
         _dict = dict()
         for key in msg_dict.keys():
+            print("type is {};".format(type(msg_dict[key]._type)))
+            __dict = _string_formatting(
+                message_converter.convert_ros_message_to_dictionary(msg_dict[key]))
             _dict[key] = {"type": msg_dict[key]._type,
-                          "dict": message_converter.convert_ros_message_to_dictionary(msg_dict[key])}
+                          "dict": __dict}
         return _dict
+
+
+def _string_formatting(_dict):    
+
+    for key in _dict.keys():
+        val = _dict[key]
+        if isinstance(val, dict):
+            _dict[key] = _string_formatting(val)
+        elif "unicode" in str(type(val)):
+            _dict[key] = str(val)
+    return _dict
 
 
 def _msgtype2kind(msg_name):
