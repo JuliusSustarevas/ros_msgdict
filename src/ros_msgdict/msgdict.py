@@ -134,10 +134,10 @@ def _msgdict2_dict(msg_dict):
     Returns:
         [dict]: [Dictionary ready to be saved]
     """
+
     if _check_msgdict_format(msg_dict):
         _dict = dict()
-        for key in msg_dict.keys():
-            print("type is {};".format(type(msg_dict[key]._type)))
+        for key in msg_dict.keys():            
             __dict = _string_formatting(
                 message_converter.convert_ros_message_to_dictionary(msg_dict[key]))
             _dict[key] = {"type": msg_dict[key]._type,
@@ -145,14 +145,17 @@ def _msgdict2_dict(msg_dict):
         return _dict
 
 
-def _string_formatting(_dict):    
+def _string_formatting(_dict):
 
     for key in _dict.keys():
-        val = _dict[key]
+        val = _dict[key]        
         if isinstance(val, dict):
             _dict[key] = _string_formatting(val)
         elif "unicode" in str(type(val)):
             _dict[key] = str(val)
+        elif isinstance(val, list):
+            if all([isinstance(item, dict) for item in val]):
+                _dict[key] = [_string_formatting(item) for item in val]
     return _dict
 
 
